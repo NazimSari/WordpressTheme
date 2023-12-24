@@ -16,6 +16,12 @@
     <?php wp_head(); ?>
     <title>Evolution Theme</title>
 </head>
-<body>
-    <?php wp_body_open(); ?>
+<body <?php body_class(); ?>>
+    <?php if(function_exists('wp_body_open')) {
+        
+        wp_body_open();
+        
+    }
+    
+    ?>
     <header>Header</header>
