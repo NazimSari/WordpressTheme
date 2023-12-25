@@ -11,6 +11,12 @@
 
  require_once EVOLUTION_THEME_DIR . '/inc/helpers/autoloader.php';
 
+ function evolution_get_theme_instance(){
+     \EVOLUTION_THEME\Inc\EVOLUTION_THEME::get_instance();
+ }
+
+ evolution_get_theme_instance();
+
  function evolution_enqueue_scripts(){
     
     // Register Styles
