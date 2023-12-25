@@ -5,6 +5,12 @@
  * @package Evolution
  */
 
+ if(!defined('EVOLUTION_THEME_DIR')){
+     define('EVOLUTION_THEME_DIR', untrailingslashit(get_template_directory()));
+ }
+
+ require_once EVOLUTION_THEME_DIR . '/inc/helpers/autoloader.php';
+
  function evolution_enqueue_scripts(){
     
     // Register Styles
