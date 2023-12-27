@@ -68,7 +68,7 @@ function autoloader( $resource = '' ) {
 				break;
 		}
 
-		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit(EVOLUTION_THEME_DIR ), $directory, $file_name );
+		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit(EVOLUTION_DIR_PATH ), $directory, $file_name );
 
 	}
 
