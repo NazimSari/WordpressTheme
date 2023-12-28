@@ -15,6 +15,7 @@
  }
 
  require_once EVOLUTION_DIR_PATH . '/inc/helpers/autoloader.php';
+ require_once EVOLUTION_DIR_PATH . '/inc/helpers/template-tags.php';
 
  function evolution_get_theme_instance(){
      \EVOLUTION_THEME\Inc\EVOLUTION_THEME::get_instance();
