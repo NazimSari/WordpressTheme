@@ -46,7 +46,7 @@ function evolution_posted_on() {
 
     $posted_on = sprintf(
         esc_html_x('Posted on %s', 'post date', 'evolution'),
-        '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+        '<a class="text-decoration-none" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
     echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
@@ -55,12 +55,36 @@ function evolution_posted_on() {
 function evolution_posted_by() {
     $byline = sprintf(
         esc_html_x(' by %s', 'post author', 'evolution'),
-        '<span class="author vcard"><a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'">' . esc_html(get_the_author()) .'</a></span>'
+        '<span class="author vcard"><a class="text-decoration-none" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'">' . esc_html(get_the_author()) .'</a></span>'
     );   
     echo '<span class="byline text-secondary"> '. $byline . '</span>';
 
 }
 
+function evolution_the_excerpt($trim_character_count = 0) {
+    
+    if(! has_excerpt()|| $trim_character_count === 0){
+        the_excerpt();
+        return;
+    }
 
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = substr($excerpt, 0, $trim_character_count);
+    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+
+    echo $excerpt . '[...]';
+
+}
+
+function evolution_excerpt_more($more = ' '){
+    if(!is_single()){
+        $more = sprintf(
+            '<button class="mt-2 btn btn-info"><a class="evolution-read-more text-white text-decoration-none" href="%1$s">%2$s</a></button>',
+            get_permalink(get_the_ID()),
+            __('Read more', 'evolution')
+        );
+    }
+    return $more;
+}
 
 ?>
