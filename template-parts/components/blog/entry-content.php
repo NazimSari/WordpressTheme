@@ -25,10 +25,21 @@
                 the_title('<span class="screen-reader-text">"', '"</span>', false),
             )
     );
-    }else{
+        
+        wp_link_pages(
+            [
+                'before' => '<div class="page-links">' . esc_html__('Pages:', 'evolution'),
+                'after' => '</div>',
+            ]
+            );
+    
+    } else {
         evolution_the_excerpt();
         echo evolution_excerpt_more();
     }
+
+   
+
         
     ?>
 </div>

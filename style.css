@@ -28,3 +28,8 @@ img {
 .updated:not(.published) {
   display: none;
 }
+
+.page-numbers.current > span {
+  background-color: grey;
+  color: white;
+}
