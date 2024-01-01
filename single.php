@@ -11,10 +11,13 @@ get_header();
 
    <div id="primary">
      <main id="main" class="site-main mt-5" role="main">
+          <div class="container">
+          <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
           <?php
           if(have_posts()):
                ?>
-               <div class="container">
+               <div class="post-wrap">
                     <?php 
                     if(is_home() && ! is_front_page()){
                     ?>
@@ -45,12 +48,16 @@ get_header();
           endif;
           
           ?>
-          <div class="container">
-               <?php
-                previous_post_link();
-                next_post_link();
-               ?>
+          <!-- Next and previous link for page navigation. -->
+          <div class="prev-link"><?php previous_post_link();?> </div>
+          <div class="next-link"><?php next_post_link(); ?></div>
           </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+               <?php get_sidebar(); ?>
+          </div>
+         </div>
+          </div>
+          
      </main>
    </div>
 
