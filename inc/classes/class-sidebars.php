@@ -8,7 +8,6 @@
 namespace EVOLUTION_THEME\Inc;
 
 use EVOLUTION_THEME\Inc\Traits\Singleton;
-
 class Sidebars {
     use Singleton;
 
@@ -22,6 +21,7 @@ class Sidebars {
         //actions
 
         add_action('widgets_init', [$this, 'register_sidebars']);
+        add_action('widgets_init', [$this, 'register_clock_widget']);
     }
 
     
@@ -45,6 +45,11 @@ class Sidebars {
             'after_title' => '</h3>',
         ]);
     }
+
+    public function register_clock_widget(){    
+        register_widget('EVOLUTION_THEME\Inc\Clock_Widget');
+    }
+    
 
 
 
