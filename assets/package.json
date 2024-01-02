@@ -1,0 +1,37 @@
+{
+  "name": "evolution",
+  "version": "1.0.0",
+  "description": "evolution theme packages",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "themes"
+  ],
+  "author": "Nazim Sari",
+  "license": "MIT",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.23.7",
+    "babel-loader": "^8.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^5.2.7",
+    "cssnano": "^6.0.2",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.7",
+    "@babel/preset-react": "^7.23.3",
+    "cross-env": "^7.0.3",
+    "optimize-css-assets-webpack-plugin": "^3.2.0"
+  }
+}
