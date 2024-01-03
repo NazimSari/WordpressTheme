@@ -36,6 +36,16 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Node.js dependencies
+node_modules/
+
+# Lock file
+package-lock.json
+
+# Build and distribution directories
+build/
+dist/
+
 
 # All plugins
 # Note: If you wish to whitelist plugins,
