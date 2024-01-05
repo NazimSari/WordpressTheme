@@ -79,7 +79,7 @@ function evolution_the_excerpt($trim_character_count = 0) {
 function evolution_excerpt_more($more = ' '){
     if(!is_single()){
         $more = sprintf(
-            '<button class="mt-2 btn btn-info"><a class="evolution-read-more text-white text-decoration-none" href="%1$s">%2$s</a></button>',
+            '<a class="evolution-read-more" href="%1$s"><button class="mt-3 btn btn-info text-white">%2$s</button></a>',
             get_permalink(get_the_ID()),
             __('Read more', 'evolution')
         );

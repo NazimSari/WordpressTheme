@@ -21,11 +21,11 @@
     <?php 
     foreach($article_terms as $key => $article_term){
         ?>
-        <button class="btn border border-secondry mb-2 me-2">
-            <a class="entry-footer-link text-black-50 text-decoration-none" href="<?php echo esc_url(get_term_link($article_term));?>">
+        <a class="entry-footer-link text-black-50 text-decoration-none" href="<?php echo esc_url(get_term_link($article_term));?>">
+            <button class="btn border border-secondry mb-2 me-2">
             <?php echo esc_html($article_term->name); ?>
-            </a>
-        </button>
+            </button>
+        </a>
         <?php
         
         

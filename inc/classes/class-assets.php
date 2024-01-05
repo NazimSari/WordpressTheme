@@ -28,14 +28,12 @@ class Assets {
 
     public function register_styles(){
         //Register Styles
-        wp_register_style('style-css', get_stylesheet_uri(),[],filemtime(EVOLUTION_DIR_PATH .'/style.css'), 'all');
         wp_register_style('bootstrap-css', EVOLUTION_BUILD_LIB_URI . '/css/bootstrap.min.css', [], false, 'all');
         wp_register_style('main-css', EVOLUTION_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], filemtime(EVOLUTION_BUILD_CSS_DIR_PATH .'/main.css'), 'all');       
         // wp_enqueue_style('fonts-css', get_template_directory_uri().'/assets/src/library/fonts/fonts.css', [], false, 'all');
         
         // Enqueue Styles
         wp_enqueue_style('bootstrap-css');
-        wp_enqueue_style('style-css');
         wp_enqueue_style('main-css');
     }
     public function register_scripts(){
