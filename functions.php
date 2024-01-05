@@ -32,10 +32,14 @@
  if(!defined('EVOLUTION_BUILD_CSS_URI')){
     define('EVOLUTION_BUILD_CSS_URI', untrailingslashit(get_template_directory_uri()).'/assets/build/css');
  }
+ if(!defined('EVOLUTION_BUILD_LIB_URI')){
+   define('EVOLUTION_BUILD_LIB_URI', untrailingslashit(get_template_directory_uri()).'/assets/src/library');
+}
 
  if(!defined('EVOLUTION_BUILD_CSS_DIR_PATH')){
-    define('EVOLUTION_BUILD_CSS_DIR_PATH', untrailingslashit(get_template_directory()). '/build/css');
+    define('EVOLUTION_BUILD_CSS_DIR_PATH', untrailingslashit(get_template_directory()). '/assets/build/css');
 }
+
 
  require_once EVOLUTION_DIR_PATH . '/inc/helpers/autoloader.php';
  require_once EVOLUTION_DIR_PATH . '/inc/helpers/template-tags.php';

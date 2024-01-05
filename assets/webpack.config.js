@@ -1,7 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const cssnano = require("cssnano");
 const TerserPlugin = require("terser-webpack-plugin");
 
@@ -28,7 +28,7 @@ const rules = [
   {
     test: /\.scss$/,
     exclude: /node_modules/,
-    use: [MiniCssExtractPlugin.loader, "css-loader"],
+    use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
   },
   {
     test: /\.(png|jpg|svg|jpeg|gif|ico)$/,
@@ -59,6 +59,7 @@ const plugins = (env, argv) => {
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
+      chunkFilename: "css/[id].css",
     }),
     // Diğer pluginler buraya eklenmeli
   ];
@@ -74,8 +75,17 @@ module.exports = (env, argv) => ({
   optimization: {
     minimize: true,
     minimizer: [
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: cssnano,
+      new CssMinimizerPlugin({
+        minimizerOptions: {
+          processorOptions: {
+            preset: [
+              "default",
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
+          },
+        },
       }),
       new TerserPlugin(),
     ],
