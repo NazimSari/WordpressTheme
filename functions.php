@@ -17,6 +17,10 @@
     define('EVOLUTION_BUILD_URI', untrailingslashit(get_template_directory_uri()).'/assets/build');
  }
 
+if(!defined('EVOLUTION_BUILD_PATH')){
+   define('EVOLUTION_BUILD_PATH', untrailingslashit(get_template_directory()). '/assets/build');
+}
+
  if(!defined('EVOLUTION_BUILD_JS_URI')){
     define('EVOLUTION_BUILD_JS_URI', untrailingslashit(get_template_directory_uri()).'/assets/build/js');
  }
@@ -53,6 +57,8 @@
  function evolution_enqueue_scripts(){
     
  }
+
+
 
 
 add_action('wp_enqueue_scripts', 'evolution_enqueue_scripts');
